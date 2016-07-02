@@ -4,9 +4,6 @@ import os
 import random
 import time
 
-# Third-party dependencies
-# import dataset
-import requests
 import tweepy
 from ttp import ttp
 
@@ -59,9 +56,6 @@ def get_gif_filename(term):
     filename = 'output.gif'
     #logging.info('get_gif_filename: %s--%s' % (term, filename))
 
-    f = open(filename, 'wb')
-    f.write(requests.get(image.media_url).content)
-    f.close()
     return filename
 
 
