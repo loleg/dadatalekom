@@ -54,12 +54,10 @@ parser = ttp.Parser()
 backoff = BACKOFF
 
 def get_gif_filename(term):
-    if not gen_gif(term):
-        logging.error('Could not gen_gif')
-        return None
+    gen_gif(term)
 
     filename = 'output.gif'
-    logging.info('get_gif_filename: %s--%s' % (term, filename))
+    #logging.info('get_gif_filename: %s--%s' % (term, filename))
 
     f = open(filename, 'wb')
     f.write(requests.get(image.media_url).content)
