@@ -50,15 +50,6 @@ parser = ttp.Parser()
 # backoff time
 backoff = BACKOFF
 
-def get_gif_filename(term):
-    gen_gif(term)
-
-    filename = 'output.gif'
-    #logging.info('get_gif_filename: %s--%s' % (term, filename))
-
-    return filename
-
-
 def parse_tweet(tweet_from, tweet_text):
     query = tweet_text[tweet_text.index('@%s' % USERNAME) + len('@%s' % USERNAME) + 1:]
 
@@ -106,7 +97,8 @@ class StreamListener(tweepy.StreamListener):
 
             if search_term:
                 # Search and save the image
-                filename = get_gif_filename(search_term)
+                search_term = gen_gif(search_term)
+                filename = 'output.gif'
                 if filename:
                     # Generate and send the the reply tweet
                     reply_tweet = generate_reply_tweet(tagged_users, search_term)

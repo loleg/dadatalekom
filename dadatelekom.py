@@ -35,7 +35,7 @@ def gen_gif(term):
 
     # image parameters
     W,H = 320,320
-    D = 20
+    D = 10
 
 
     # In[14]:
@@ -93,7 +93,7 @@ def gen_gif(term):
         return surface.get_npimage()
 
     clip = mpy.VideoClip(make_frame, duration=D)
-    clip.write_gif("output.gif", fps=5, opt="OptimizePlus")
+    clip.write_gif("output.gif", fps=4, opt="OptimizePlus")
 
-
+    return " ".join(bigwords)
     # ![](output.gif)
