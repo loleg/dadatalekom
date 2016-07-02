@@ -1,0 +1,2 @@
+# dadatalekom
+a mindless #glamhack
