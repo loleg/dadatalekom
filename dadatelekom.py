@@ -80,7 +80,7 @@ def gen_gif(term):
             if i == int((t * 2) % chunk_len): fade = 0.5
                 #((chunk_len - i) / chunk_len) + 1 * (t % scenelen)),
             ti = gz.text(chosen[i],
-              fontfamily="Impact", fontsize=60,
+              fontfamily="Radis Noir Bold", fontsize=random.randint(50, 55),
               fill=(1, 0.9, 0.6, fade),
               xy=(W/2,60 + i * 70))
             ti.draw(surface)
