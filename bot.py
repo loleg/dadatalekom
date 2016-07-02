@@ -53,7 +53,7 @@ parser = ttp.Parser()
 # backoff time
 backoff = BACKOFF
 
-def get_gif(term):
+def get_gif_filename(term):
     if not gen_gif(term):
         logging.error('Could not gen_gif')
         return None
@@ -143,5 +143,5 @@ stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
 try:
     stream.userstream(_with='user', replies='all')
 except Exception as e:
-    logging.INFO('stream_exception: %s' % e)
+    logging.warn('stream_exception', e)
     raise e
