@@ -52,6 +52,7 @@ backoff = BACKOFF
 
 def parse_tweet(tweet_from, tweet_text):
     query = tweet_text[tweet_text.index('@%s' % USERNAME) + len('@%s' % USERNAME) + 1:]
+    if query is None: query = ""
 
     result = parser.parse(tweet_text)
     tagged_users = result.users + [tweet_from]

@@ -95,5 +95,5 @@ def gen_gif(term):
     clip = mpy.VideoClip(make_frame, duration=D)
     clip.write_gif("output.gif", fps=4, opt="OptimizePlus")
 
-    return " ".join(bigwords)
+    return " ".join(bigwords[1:5])
     # ![](output.gif)
